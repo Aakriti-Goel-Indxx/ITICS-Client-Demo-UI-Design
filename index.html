@@ -52,15 +52,11 @@ button,input,select{font-family:inherit;}
 .pg{display:none;height:calc(100vh - 56px);margin-top:56px;overflow:hidden;}
 .pg.on{display:flex;flex-direction:column;}
 
-/* ════════════════════════════════════════
-   AUTH PAGE
-   ════════════════════════════════════════ */
+/* ════════════════════════════════════════ AUTH PAGE ════════════════════════════════════════ */
 .auth-layout{display:grid;grid-template-columns:1fr 480px;height:100%;overflow:hidden;}
-
 .auth-hero{display:flex;flex-direction:column;justify-content:center;padding:48px 56px;position:relative;overflow-y:auto;background:linear-gradient(135deg,rgba(124,58,237,.06) 0%,transparent 50%,rgba(8,145,178,.04) 100%);}
 .auth-hero::before{content:'';position:absolute;top:-80px;left:20%;width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.12) 0%,transparent 70%);pointer-events:none;}
 .auth-hero::after{content:'';position:absolute;bottom:-60px;right:10%;width:360px;height:360px;background:radial-gradient(circle,rgba(8,145,178,.09) 0%,transparent 70%);pointer-events:none;}
-
 .auth-eyebrow{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--pur-l);border:1px solid rgba(124,58,237,.3);border-radius:var(--r24);font-size:.7rem;color:#a78bfa;font-weight:600;margin-bottom:18px;width:fit-content;}
 .auth-h1{font-size:3rem;font-weight:800;line-height:1.08;margin-bottom:14px;letter-spacing:-2px;}
 .auth-h1 span{background:linear-gradient(90deg,var(--acc),var(--pur));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -168,81 +164,34 @@ button,input,select{font-family:inherit;}
 .vbtn{padding:3px 8px;background:transparent;border:1px solid var(--b1);border-radius:3px;color:var(--g2);font-size:.62rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .vbtn:hover{border-color:var(--cyn);color:var(--cyn);}
 .cb{width:13px;height:13px;accent-color:var(--pur);cursor:pointer;flex-shrink:0;}
-
-/* ── EXPANDED ROW ── */
 .seg-expand-row{display:none;}
 .seg-expand-row.on{display:table-row;}
 .seg-expand-cell{padding:0 !important;background:#07090c !important;}
 
 /* ════════════════════════════════════
-   INLINE SEGMENT EXPAND — matches snapshot
+   INLINE SEGMENT EXPAND — IMPROVED
    ════════════════════════════════════ */
 .exp-wrap-outer{background:#07090c;border-top:2px solid rgba(124,58,237,.25);}
-
-/* Top meta row: L0 chip + counts + column headers */
-.exp-meta-row{
-  display:flex;align-items:center;gap:8px;
-  padding:4px 10px 4px 10px;
-  background:var(--s2);
-  border-bottom:1px solid var(--b1);
-  font-size:.58rem;
-}
-.exp-meta-row .col-hd{
-  font-size:.56rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:.5px;color:var(--g2);white-space:nowrap;
-}
-
-/* Each L1 group block */
-.exp-l1-group{
-  display:flex;align-items:stretch;
-  border-bottom:1px solid rgba(255,255,255,.04);
-}
+.exp-meta-row{display:flex;align-items:center;gap:8px;padding:6px 12px;background:var(--s2);border-bottom:1px solid var(--b1);font-size:.6rem;}
+.exp-meta-row .col-hd{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g2);white-space:nowrap;}
+.exp-l1-group{display:flex;align-items:stretch;border-bottom:1px solid rgba(255,255,255,.05);}
 .exp-l1-group:last-child{border-bottom:none;}
-
-/* Left label column */
-.exp-l1-label{
-  width:170px;flex-shrink:0;
-  padding:8px 10px 8px 14px;
-  border-right:1px solid rgba(255,255,255,.05);
-  background:rgba(255,255,255,.015);
-  display:flex;flex-direction:column;justify-content:center;gap:3px;
-}
-.exp-l1-code{
-  display:inline-flex;padding:1px 5px;
-  background:rgba(124,58,237,.14);border:1px solid rgba(124,58,237,.22);
-  border-radius:2px;font-size:.54rem;color:#a78bfa;font-weight:700;font-family:monospace;
-  width:fit-content;margin-bottom:1px;
-}
-.exp-l1-name{font-size:.72rem;font-weight:700;color:var(--w);line-height:1.25;}
-.exp-l1-sub{font-size:.58rem;color:var(--g2);}
-
-/* Right L2 rows container */
+.exp-l1-label{width:190px;flex-shrink:0;padding:10px 12px 10px 16px;border-right:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.018);display:flex;flex-direction:column;justify-content:center;gap:4px;}
+.exp-l1-code{display:inline-flex;padding:2px 7px;background:rgba(124,58,237,.14);border:1px solid rgba(124,58,237,.22);border-radius:2px;font-size:.62rem;color:#a78bfa;font-weight:700;font-family:monospace;width:fit-content;margin-bottom:2px;}
+.exp-l1-name{font-size:.82rem;font-weight:700;color:var(--w);line-height:1.3;}
+.exp-l1-sub{font-size:.64rem;color:var(--g2);}
 .exp-l2-rows{flex:1;display:flex;flex-direction:column;}
-
-/* Single L2 row */
-.exp-l2-row{
-  display:flex;align-items:center;
-  min-height:32px;
-  padding:5px 10px 5px 10px;
-  border-bottom:1px solid rgba(255,255,255,.035);
-}
+.exp-l2-row{display:flex;align-items:center;min-height:40px;padding:8px 14px 8px 12px;border-bottom:1px solid rgba(255,255,255,.04);}
 .exp-l2-row:last-child{border-bottom:none;}
-.exp-l2-name{flex:1;font-size:.71rem;color:var(--g1);padding-right:8px;line-height:1.3;}
-.exp-l2-code-cell{width:50px;flex-shrink:0;text-align:center;}
-.exp-l2-code-badge{
-  padding:1px 4px;background:var(--cyn-l);
-  border:1px solid rgba(8,145,178,.2);border-radius:2px;
-  font-size:.54rem;color:var(--cyn);font-weight:700;font-family:monospace;
-}
-.exp-l2-rev{width:52px;flex-shrink:0;text-align:right;font-size:.8rem;font-weight:700;padding-right:8px;}
-.exp-l2-bar-cell{width:150px;flex-shrink:0;padding:0 8px;}
-.exp-l2-bar-track{height:6px;background:var(--b1);border-radius:3px;overflow:hidden;}
-.exp-l2-bar-fill{height:100%;border-radius:3px;}
-.exp-l2-cls{width:76px;flex-shrink:0;text-align:center;}
-
-/* ── LOCKED BLOCK ── */
-.locked-block{padding:7px 10px;display:flex;align-items:center;gap:7px;background:var(--s2);border-radius:var(--r8);border-left:3px solid var(--b1);}
-.locked-block span{font-size:.68rem;color:var(--g3);}
+.exp-l2-name{flex:1;font-size:.82rem;font-weight:500;color:var(--g1);padding-right:12px;line-height:1.35;}
+.exp-l2-code-cell{width:60px;flex-shrink:0;text-align:center;}
+.exp-l2-code-badge{padding:2px 5px;background:var(--cyn-l);border:1px solid rgba(8,145,178,.2);border-radius:2px;font-size:.62rem;color:var(--cyn);font-weight:700;font-family:monospace;}
+.exp-l2-rev{width:62px;flex-shrink:0;text-align:right;font-size:.92rem;font-weight:800;padding-right:10px;}
+.exp-l2-bar-cell{width:160px;flex-shrink:0;padding:0 10px;}
+.exp-l2-bar-track{height:8px;background:var(--b1);border-radius:4px;overflow:hidden;}
+.exp-l2-bar-fill{height:100%;border-radius:4px;}
+.exp-l2-cls{width:90px;flex-shrink:0;text-align:center;}
+.exp-l2-cls .rc{font-size:.66rem;padding:3px 8px;}
 
 /* ── SCREENER / DASHBOARD ── */
 .main-pg{display:none;height:calc(100vh - 56px);margin-top:56px;flex-direction:column;}
@@ -250,11 +199,25 @@ button,input,select{font-family:inherit;}
 .pg-hdr{padding:8px 24px;border-bottom:1px solid var(--b1);background:var(--bg);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:12px;}
 .pg-hdr-l h1{font-size:.88rem;font-weight:700;}
 .pg-hdr-l p{font-size:.66rem;color:var(--g2);}
-.yr-tog{display:flex;background:var(--s2);border-radius:var(--r6);padding:2px;gap:2px;}
-.yr-b{padding:3px 10px;background:transparent;border:none;color:var(--g2);font-size:.66rem;font-weight:500;cursor:pointer;border-radius:var(--r4);transition:all .12s;}
-.yr-b.on{background:var(--grad);color:var(--w);font-weight:700;}
+
+/* DROPDOWN YEAR SELECTOR */
+.yr-select-wrap{position:relative;display:inline-flex;align-items:center;}
+.yr-select{appearance:none;-webkit-appearance:none;padding:5px 28px 5px 10px;background:var(--s2);border:1px solid var(--b1);border-radius:var(--r6);color:var(--w);font-size:.72rem;font-weight:600;cursor:pointer;outline:none;transition:border-color .15s;}
+.yr-select:focus,.yr-select:hover{border-color:var(--pur);}
+.yr-select-wrap::after{content:'▾';position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:.65rem;color:var(--g2);pointer-events:none;}
+
 .main-body{flex:1;display:flex;overflow:hidden;}
-.fp{width:250px;background:var(--s1);border-right:1px solid var(--b1);display:flex;flex-direction:column;flex-shrink:0;}
+
+/* COLLAPSIBLE FILTER PANEL */
+.fp{background:var(--s1);border-right:1px solid var(--b1);display:flex;flex-direction:column;flex-shrink:0;transition:width .25s ease;overflow:hidden;}
+.fp.open{width:250px;}
+.fp.closed{width:36px;}
+.fp-toggle-btn{width:100%;padding:8px 0;background:transparent;border:none;border-bottom:1px solid var(--b1);color:var(--g1);font-size:.9rem;cursor:pointer;transition:background .15s;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:5px;}
+.fp-toggle-btn:hover{background:rgba(255,255,255,.04);}
+.fp-toggle-btn .fp-toggle-label{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;overflow:hidden;}
+.fp.closed .fp-toggle-label{display:none;}
+.fp-inner{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+.fp.closed .fp-inner{display:none;}
 .fp-body{flex:1;overflow-y:auto;padding:8px 0;}
 .fp-sec{border-bottom:1px solid rgba(255,255,255,.04);}
 .fp-sec-hd{display:flex;align-items:center;justify-content:space-between;padding:8px 11px;cursor:pointer;user-select:none;transition:background .12s;}
@@ -477,6 +440,21 @@ button,input,select{font-family:inherit;}
 .cg-item a,.cg-item p{font-size:.66rem;color:var(--cyn);text-decoration:none;}
 .cg-item p{color:var(--g2);}
 
+/* ── FAQ MODAL ── */
+.faq-modal{max-width:680px;}
+.faq-item{border-bottom:1px solid var(--b1);overflow:hidden;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;cursor:pointer;font-size:.78rem;font-weight:600;transition:background .12s;gap:10px;}
+.faq-q:hover{background:rgba(255,255,255,.02);}
+.faq-q-arrow{font-size:.6rem;color:var(--g2);flex-shrink:0;transition:transform .2s;}
+.faq-q.open .faq-q-arrow{transform:rotate(90deg);}
+.faq-a{display:none;padding:0 14px 12px;font-size:.75rem;color:var(--g1);line-height:1.75;}
+.faq-a.open{display:block;}
+.faq-tag{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.58rem;font-weight:700;margin-right:4px;margin-bottom:4px;}
+.faq-tag-class{background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2);color:#a78bfa;}
+.faq-tag-sub{background:var(--cyn-l);border:1px solid rgba(8,145,178,.2);color:var(--cyn);}
+.faq-section-hd{padding:8px 14px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--g2);background:var(--s2);}
+
 /* ── UTILS ── */
 .loading{position:fixed;inset:0;background:var(--bg);display:none;align-items:center;justify-content:center;z-index:999;}
 .loading.on{display:flex;}
@@ -486,6 +464,12 @@ button,input,select{font-family:inherit;}
 .toast-box.on{transform:translateY(0);opacity:1;}
 .empty-st{text-align:center;padding:36px 14px;color:var(--g2);}
 .empty-st .ei{font-size:1.5rem;margin-bottom:5px;}
+
+/* Resources toolbar */
+.res-bar{padding:6px 24px;border-bottom:1px solid var(--b1);background:rgba(7,8,10,.98);display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.res-btn{display:flex;align-items:center;gap:5px;padding:4px 11px;background:transparent;border:1px solid var(--b1);border-radius:var(--r24);color:var(--g2);font-size:.66rem;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.res-btn:hover{border-color:var(--cyn);color:var(--cyn);}
+.res-sep{width:1px;height:18px;background:var(--b1);margin:0 2px;}
 </style>
 </head>
 <body>
@@ -527,9 +511,9 @@ button,input,select{font-family:inherit;}
       <p class="auth-sub">Screen 17,000+ companies with full L0 → L1 → L2 thematic mapping. Subscribe only to the securities you need.</p>
       <div class="auth-stats">
         <div><div class="astat-n">17,000+</div><div class="astat-l">Companies</div></div>
+        <div><div class="astat-n">11</div><div class="astat-l">L0 Sectors</div></div>
         <div><div class="astat-n">55+</div><div class="astat-l">L1 Themes</div></div>
         <div><div class="astat-n">700+</div><div class="astat-l">L2 Sub-categories</div></div>
-        <div><div class="astat-n">3</div><div class="astat-l">Years (2023–25)</div></div>
       </div>
       <div class="auth-btns">
         <button class="btn-white" onclick="switchTab('signup')">Start Free Trial</button>
@@ -630,15 +614,32 @@ button,input,select{font-family:inherit;}
     <div class="pg-hdr-l"><h1>Security Screener</h1><p>Filter by Sector · Theme · Sub-category · Region · Revenue → Select → Subscribe</p></div>
     <div style="display:flex;align-items:center;gap:9px">
       <span class="price-badge" id="PriceBadge"></span>
-      <div class="yr-tog" id="ScrYrTog">
-        <button class="yr-b on" onclick="setYr(this,2025,'scr')">2025</button>
-        <button class="yr-b" onclick="setYr(this,2024,'scr')">2024</button>
-        <button class="yr-b" onclick="setYr(this,2023,'scr')">2023</button>
+      <div class="yr-select-wrap">
+        <select class="yr-select" id="ScrYrSel" onchange="setYrSel(this,'scr')">
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>
       </div>
     </div>
   </div>
+  <!-- Resources bar -->
+  <div class="res-bar">
+    <button class="res-btn" onclick="dlGuide('itics')">📘 ITICS Understanding Guide</button>
+    <button class="res-btn" onclick="dlGuide('subscription')">📋 Subscription Guide</button>
+    <div class="res-sep"></div>
+    <button class="res-btn" onclick="openFaq()">❓ FAQs</button>
+  </div>
   <div class="main-body">
-    <div class="fp" id="ScrFP"><div class="fp-body" id="ScrFPBody"></div><div class="fp-footer"><button class="fp-apply" onclick="applyF()">Apply Filters</button><button class="fp-clear" onclick="clearF()">Clear</button></div></div>
+    <div class="fp open" id="ScrFP">
+      <button class="fp-toggle-btn" onclick="toggleFpPanel('ScrFP')" title="Toggle Filters">
+        <span>⇆</span><span class="fp-toggle-label">Filters</span>
+      </button>
+      <div class="fp-inner">
+        <div class="fp-body" id="ScrFPBody"></div>
+        <div class="fp-footer"><button class="fp-apply" onclick="applyF()">Apply Filters</button><button class="fp-clear" onclick="clearF()">Clear</button></div>
+      </div>
+    </div>
     <div class="mid">
       <div class="rbar">
         <div class="rstat"><strong id="ScrCoCnt">0</strong> companies · <span id="ScrSegCnt"></span></div>
@@ -683,15 +684,32 @@ button,input,select{font-family:inherit;}
   <div class="pg-hdr">
     <div class="pg-hdr-l"><h1>My Subscribed Securities</h1><p>Full L0 · L1 · L2 · Revenue data unlocked</p></div>
     <div style="display:flex;align-items:center;gap:7px">
-      <div class="yr-tog" id="DashYrTog">
-        <button class="yr-b on" onclick="setYr(this,2025,'dash')">2025</button>
-        <button class="yr-b" onclick="setYr(this,2024,'dash')">2024</button>
-        <button class="yr-b" onclick="setYr(this,2023,'dash')">2023</button>
+      <div class="yr-select-wrap">
+        <select class="yr-select" id="DashYrSel" onchange="setYrSel(this,'dash')">
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+          <option value="2023">2023</option>
+        </select>
       </div>
     </div>
   </div>
+  <!-- Resources bar -->
+  <div class="res-bar">
+    <button class="res-btn" onclick="dlGuide('itics')">📘 ITICS Understanding Guide</button>
+    <button class="res-btn" onclick="dlGuide('subscription')">📋 Subscription Guide</button>
+    <div class="res-sep"></div>
+    <button class="res-btn" onclick="openFaq()">❓ FAQs</button>
+  </div>
   <div class="main-body">
-    <div class="fp" id="DashFP"><div class="fp-body" id="DashFPBody"></div><div class="fp-footer"><button class="fp-apply" onclick="applyDF()">Apply Filters</button><button class="fp-clear" onclick="clearDF()">Clear</button></div></div>
+    <div class="fp open" id="DashFP">
+      <button class="fp-toggle-btn" onclick="toggleFpPanel('DashFP')" title="Toggle Filters">
+        <span>⇆</span><span class="fp-toggle-label">Filters</span>
+      </button>
+      <div class="fp-inner">
+        <div class="fp-body" id="DashFPBody"></div>
+        <div class="fp-footer"><button class="fp-apply" onclick="applyDF()">Apply Filters</button><button class="fp-clear" onclick="clearDF()">Clear</button></div>
+      </div>
+    </div>
     <div class="mid" style="display:flex;flex-direction:column;">
       <div class="dash-cards" id="DashCards">
         <div class="dc trial-dc"><h4>Trial Status</h4><div class="dv" style="color:var(--grn);font-size:.95rem" id="DcTrial">Active</div><div class="ds" id="DcExp">—</div><div class="dc-prog"><div class="dc-prog-fill" id="DcProg" style="width:100%"></div></div></div>
@@ -782,10 +800,18 @@ button,input,select{font-family:inherit;}
   </div>
 </div>
 
+<!-- ══ FAQ MODAL ══ -->
+<div class="modal-bg" id="MdlFaq">
+  <div class="modal faq-modal" style="max-width:680px;max-height:88vh;">
+    <div class="modal-hd"><div><h3>Frequently Asked Questions</h3><p>ITICS Classification &amp; Subscription</p></div><button class="mcls" onclick="$$('MdlFaq').classList.remove('on')">×</button></div>
+    <div id="FaqBody" style="overflow-y:auto;max-height:calc(88vh - 64px);"></div>
+  </div>
+</div>
+
 <script>
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 // DATA
-// ═══════════════════════════════════════════
+// ═══════════════════════════════════════
 var DB=[
   {id:'111047-C',isin:'INE466L01038',name:'360 ONE WAM Ltd',fy:'3/31/2024',l0:'Financials',country:'India',mcap:8200,segs:[{l1c:'103',l1:'Financial Services',l2c:'10308',l2:'Wealth and Asset Mgmt',r25:99.89,r24:99.20,r23:98.51},{l1c:'901',l1:'Others',l2c:'90102',l2:'Other Unallocated Revenue',r25:0.11,r24:0.80,r23:1.49}]},
   {id:'102249-C',isin:'GB00B1YW4409',name:'3i Group Plc',fy:'3/31/2024',l0:'Financials',country:'United Kingdom',mcap:24000,segs:[{l1c:'103',l1:'Financial Services',l2c:'10310',l2:'Private Equity & VC',r25:99.00,r24:98.50,r23:97.80},{l1c:'103',l1:'Financial Services',l2c:'10308',l2:'Wealth and Asset Mgmt',r25:1.00,r24:1.50,r23:2.20}]},
@@ -813,6 +839,8 @@ var DB=[
   {id:'MDRN01-C',isin:'US60770K1079',name:'Moderna Inc',fy:'12/31/2024',l0:'Health Care',country:'United States',mcap:42000,segs:[{l1c:'302',l1:'Pharmaceuticals',l2c:'30220',l2:'Vaccines',r25:75.80,r24:74.20,r23:72.50},{l1c:'302',l1:'Pharmaceuticals',l2c:'30201',l2:'General Pharmaceuticals',r25:24.20,r24:25.80,r23:27.50}]}
 ];
 var SAMPLE_IDS=['111047-C','102507-C','100998-C'];
+// Pre-subscribed securities for Login flow
+var LOGIN_PRESET_IDS=['NVDA01-C','102507-C','MET001-C','100998-C','AZTR01-C','BRC001-C','GE001-C'];
 var REGION_PRICE={'United States':1.00,'Canada':1.25,'United Kingdom':1.50,'France':1.50,'Germany':1.50,'Japan':1.50,'Australia':1.50,'India':1.25,'China':1.50,'Israel':1.50,'default':1.50};
 var REGION_GROUPS={'Americas':['United States','Canada'],'Europe':['United Kingdom','France','Germany','Israel'],'Asia Pacific':['Japan','Australia','India','China']};
 var REGION_BUNDLES=[
@@ -824,7 +852,7 @@ var REGION_BUNDLES=[
 ];
 
 var S={
-  user:null,loggedIn:false,subscribed:[],plan:'per',
+  user:null,loggedIn:false,isLoginFlow:false,subscribed:[],plan:'per',
   trialDays:30,trialStart:null,scrYr:2025,dashYr:2025,
   selIds:[],expIds:[],filtered:DB.slice(),
   selL0:[],selL1:[],selL2:[],selGeo:[],activeRc:[],
@@ -876,12 +904,52 @@ function updateHdr(){
   if(hasT){var end=new Date(S.trialStart.getTime()+S.trialDays*864e5);var dL=Math.max(0,Math.round((end-new Date())/864e5));var pct=Math.round((dL/S.trialDays)*100);$$('HdrTrialBar').style.width=pct+'%';$$('HdrTrialDays').textContent=dL+'d left';}
 }
 
+// ─── COLLAPSIBLE FILTER PANEL ───
+function toggleFpPanel(fpId){
+  var fp=$$(fpId);
+  fp.classList.toggle('open');
+  fp.classList.toggle('closed');
+}
+
+// ─── YEAR DROPDOWN ───
+function setYrSel(sel,ctx){
+  var yr=parseInt(sel.value);
+  if(ctx==='scr'){S.scrYr=yr;applyF();}
+  else{S.dashYr=yr;renderDash();}
+}
+
 // ─── AUTH ───
 function switchTab(t){$$('TabLogin').classList.toggle('on',t==='login');$$('TabSignup').classList.toggle('on',t==='signup');$$('FrmLogin').style.display=t==='login'?'block':'none';$$('FrmSignup').style.display=t==='signup'?'block':'none';}
-$$('LBtn').addEventListener('click',function(){var id=$$('LId').value.trim(),pw=$$('LPw').value;if(!id||!pw){toast('Enter credentials');return;}showLdr(true);setTimeout(function(){showLdr(false);S.user={name:id,email:id};S.loggedIn=true;updateHdr();if(S.subscribed.length)goDash();else goSample();toast('Welcome back, '+id+'!');},800);});
+$$('LBtn').addEventListener('click',function(){
+  var id=$$('LId').value.trim(),pw=$$('LPw').value;
+  if(!id||!pw){toast('Enter credentials');return;}
+  showLdr(true);
+  setTimeout(function(){
+    showLdr(false);
+    S.user={name:id,email:id};S.loggedIn=true;S.isLoginFlow=true;
+    // Preset subscribed securities for login users
+    S.subscribed=LOGIN_PRESET_IDS.slice();
+    S.trialStart=new Date();
+    updateHdr();
+    goDash();
+    toast('Welcome back, '+id+'!');
+  },800);
+});
 $$('LPw').addEventListener('keypress',function(e){if(e.key==='Enter')$$('LBtn').click();});
-$$('SBtn').addEventListener('click',function(){var fn=$$('SFn').value.trim(),em=$$('SEm').value.trim(),pw=$$('SPw').value;if(!fn||!em||!pw){toast('First name, email and password required');return;}if(pw.length<6){toast('Password min 6 chars');return;}showLdr(true);setTimeout(function(){showLdr(false);S.user={name:fn+' '+($$('SLn').value.trim()),email:em};S.loggedIn=true;updateHdr();goSample();toast('Account created! Explore sample data.');},900);});
-function doLogout(){S.loggedIn=false;S.user=null;S.subscribed=[];S.selIds=[];S.trialStart=null;updateHdr();showPg('PgAuth');switchTab('login');}
+$$('SBtn').addEventListener('click',function(){
+  var fn=$$('SFn').value.trim(),em=$$('SEm').value.trim(),pw=$$('SPw').value;
+  if(!fn||!em||!pw){toast('First name, email and password required');return;}
+  if(pw.length<6){toast('Password min 6 chars');return;}
+  showLdr(true);
+  setTimeout(function(){
+    showLdr(false);
+    S.user={name:fn+' '+($$('SLn').value.trim()),email:em};
+    S.loggedIn=true;S.isLoginFlow=false;
+    updateHdr();goSample();
+    toast('Account created! Explore sample data.');
+  },900);
+});
+function doLogout(){S.loggedIn=false;S.user=null;S.subscribed=[];S.selIds=[];S.trialStart=null;S.isLoginFlow=false;updateHdr();showPg('PgAuth');switchTab('login');}
 function goHome(){if(!S.loggedIn){showPg('PgAuth');return;}if(S.subscribed.length)goDash();else goSample();}
 
 // ─── SAMPLE ───
@@ -911,12 +979,10 @@ function renderSample(){
 // ─── EXPAND TOGGLE ───
 function toggleExp(key){var i=S.expIds.indexOf(key);if(i===-1)S.expIds.push(key);else S.expIds.splice(i,1);if(key.startsWith('sp-'))renderSample();else if(key.startsWith('sc-'))renderScrTable();else if(key.startsWith('d-'))renderDash();}
 
-// ═══════════════════════════════════════════════════════════════
-// SEGMENT EXPAND — matches snapshot exactly
-// Left column: L1 code + name + sub-cat count
-// Right: compact rows — L2 name | Code | Revenue% | Bar | Class
-// ═══════════════════════════════════════════════════════════════
-function buildSegExpand(co, yr, isSub){
+// ═══════════════════════════════════════════
+// SEGMENT EXPAND — IMPROVED READABILITY
+// ═══════════════════════════════════════════
+function buildSegExpand(co,yr,isSub){
   if(!isSub){
     return '<div style="padding:8px 12px 8px 40px;background:rgba(124,58,237,.03);">'
       +'<div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--s2);border-radius:var(--r8);border-left:3px solid var(--b2);">'
@@ -924,80 +990,60 @@ function buildSegExpand(co, yr, isSub){
       +'</div></div>';
   }
 
-  var ss = segsOf(co, yr).slice().sort(function(a,b){return b.rev - a.rev;});
-  var l1Map = {}, l1Order = [];
+  var ss=segsOf(co,yr).slice().sort(function(a,b){return b.rev-a.rev;});
+  var l1Map={},l1Order=[];
   ss.forEach(function(s){
-    if(!l1Map[s.l1]){l1Map[s.l1]={code:s.l1c, l2s:[]}; l1Order.push(s.l1);}
+    if(!l1Map[s.l1]){l1Map[s.l1]={code:s.l1c,l2s:[]};l1Order.push(s.l1);}
     l1Map[s.l1].l2s.push(s);
   });
 
-  var L1_COLORS = ['#7c3aed','#0891b2','#059669','#d97706','#e8192c','#6366f1'];
-  var nL1 = l1Order.length, nL2 = ss.length;
+  var L1_COLORS=['#7c3aed','#0891b2','#059669','#d97706','#e8192c','#6366f1'];
+  var nL1=l1Order.length,nL2=ss.length;
 
-  // Outer wrapper
-  var h = '<div class="exp-wrap-outer">';
+  var h='<div class="exp-wrap-outer">';
 
-  // ── Meta / column-header row ──
-  h += '<div class="exp-meta-row">'
-    + '<span style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g2);margin-right:4px;">L0:</span>'
-    + '<span class="l0-chip" style="font-size:.6rem;padding:1px 7px;margin-right:6px;">'+co.l0+'</span>'
-    + '<span style="font-size:.6rem;color:var(--g2);margin-right:auto;">— '+nL1+' L1 Theme'+(nL1>1?'s':'')+' · '+nL2+' L2 segment'+(nL2>1?'s':'')+'</span>'
-    // Column headers aligned with data columns below
-    // L2 name col (flex:1) — no header needed, left side context is enough
-    + '<span class="col-hd" style="width:220px;padding-left:8px;">L2 SUB-CATEGORY</span>'
-    + '<span class="col-hd" style="width:60px;text-align:center;">CODE</span>'
-    + '<span class="col-hd" style="width:62px;text-align:right;padding-right:6px;">REVENUE</span>'
-    + '<span class="col-hd" style="width:140px;padding-left:8px;">BREAKDOWN</span>'
-    + '<span class="col-hd" style="width:82px;text-align:center;">CLASS.</span>'
-    + '</div>';
+  // Column header row
+  h+='<div class="exp-meta-row">'
+    +'<span style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--g2);margin-right:4px;">L0:</span>'
+    +'<span class="l0-chip" style="font-size:.62rem;padding:2px 8px;margin-right:8px;">'+co.l0+'</span>'
+    +'<span style="font-size:.62rem;color:var(--g2);margin-right:auto;">'+nL1+' L1 Theme'+(nL1>1?'s':'')+' · '+nL2+' L2 Segment'+(nL2>1?'s':'')+'</span>'
+    +'<span class="col-hd" style="width:240px;padding-left:16px;">L2 SUB-CATEGORY</span>'
+    +'<span class="col-hd" style="width:68px;text-align:center;">CODE</span>'
+    +'<span class="col-hd" style="width:70px;text-align:right;padding-right:12px;">REVENUE</span>'
+    +'<span class="col-hd" style="width:168px;padding-left:10px;">BREAKDOWN</span>'
+    +'<span class="col-hd" style="width:98px;text-align:center;">CLASSIFICATION</span>'
+    +'</div>';
 
-  // ── L1 groups ──
-  l1Order.forEach(function(l1, li){
-    var d = l1Map[l1];
-    var col = L1_COLORS[li % L1_COLORS.length];
-
-    h += '<div class="exp-l1-group">';
-
-    // Left label column — spans all L2 rows of this L1
-    h += '<div class="exp-l1-label" style="border-left:3px solid '+col+';">'
-      + '<span class="exp-l1-code">'+d.code+'</span>'
-      + '<div class="exp-l1-name">'+l1+'</div>'
-      + '<div class="exp-l1-sub">'+d.l2s.length+' sub-cat'+(d.l2s.length>1?'s':'')+'</div>'
-      + '</div>';
-
-    // Right: all L2 rows
-    h += '<div class="exp-l2-rows">';
-    d.l2s.forEach(function(s, si){
-      var barC = s.rc==='Pure Play'?'var(--grn)':s.rc==='Quasi'?'var(--amb)':'var(--acc)';
-      var barW = Math.min(s.rev, 100);
-      var rowBg = (si % 2 === 1) ? 'background:rgba(255,255,255,.012);' : '';
-
-      h += '<div class="exp-l2-row" style="'+rowBg+'">'
-        // L2 name — takes remaining space
-        + '<div class="exp-l2-name" style="width:220px;flex-shrink:0;padding-left:8px;">'+s.l2+'</div>'
-        // Code
-        + '<div class="exp-l2-code-cell" style="width:60px;">'
-          + '<span class="exp-l2-code-badge">'+s.l2c+'</span>'
-        + '</div>'
-        // Revenue %
-        + '<div class="exp-l2-rev" style="width:62px;color:'+barC+'">'+s.rev.toFixed(1)+'%</div>'
-        // Bar
-        + '<div class="exp-l2-bar-cell" style="width:140px;">'
-          + '<div class="exp-l2-bar-track">'
-            + '<div class="exp-l2-bar-fill" style="width:'+barW+'%;background:'+barC+';"></div>'
-          + '</div>'
-        + '</div>'
-        // Classification
-        + '<div class="exp-l2-cls" style="width:82px;">'
-          + '<span class="rc '+rcCls(s.rc)+'">'+s.rc+'</span>'
-        + '</div>'
-        + '</div>';
+  l1Order.forEach(function(l1,li){
+    var d=l1Map[l1];
+    var col=L1_COLORS[li%L1_COLORS.length];
+    h+='<div class="exp-l1-group">';
+    // Left label
+    h+='<div class="exp-l1-label" style="border-left:3px solid '+col+';">'
+      +'<span class="exp-l1-code">'+d.code+'</span>'
+      +'<div class="exp-l1-name">'+l1+'</div>'
+      +'<div class="exp-l1-sub">'+d.l2s.length+' sub-cat'+(d.l2s.length>1?'s':'')+'</div>'
+      +'</div>';
+    // Right L2 rows
+    h+='<div class="exp-l2-rows">';
+    d.l2s.forEach(function(s,si){
+      var barC=s.rc==='Pure Play'?'var(--grn)':s.rc==='Quasi'?'var(--amb)':'var(--acc)';
+      var barW=Math.min(s.rev,100);
+      var rowBg=si%2===1?'background:rgba(255,255,255,.013);':'';
+      h+='<div class="exp-l2-row" style="'+rowBg+'">'
+        +'<div class="exp-l2-name" style="width:240px;flex-shrink:0;padding-left:16px;font-size:.84rem;font-weight:500;">'+s.l2+'</div>'
+        +'<div class="exp-l2-code-cell" style="width:68px;"><span class="exp-l2-code-badge">'+s.l2c+'</span></div>'
+        +'<div class="exp-l2-rev" style="width:70px;color:'+barC+';font-size:1rem;font-weight:800;padding-right:12px;">'+s.rev.toFixed(1)+'%</div>'
+        +'<div class="exp-l2-bar-cell" style="width:168px;">'
+          +'<div class="exp-l2-bar-track"><div class="exp-l2-bar-fill" style="width:'+barW+'%;background:'+barC+';"></div></div>'
+        +'</div>'
+        +'<div class="exp-l2-cls" style="width:98px;"><span class="rc '+rcCls(s.rc)+'" style="font-size:.68rem;padding:3px 9px;">'+s.rc+'</span></div>'
+        +'</div>';
     });
-    h += '</div>'; // exp-l2-rows
-    h += '</div>'; // exp-l1-group
+    h+='</div></div>';
   });
 
-  h += '</div>'; // exp-wrap-outer
+  h+='</div>';
   return h;
 }
 
@@ -1068,7 +1114,6 @@ function applyF(){
   renderScrTable();renderSs();
 }
 function clearF(){S.selL0=[];S.selL1=[];S.selL2=[];S.selGeo=[];S.activeRc=[];S.scrSecOpen={l0:true,l1:false,l2:false,geo:false,rc:false,mcap:false,rv:false};S.filtered=DB.slice();buildFP('scr');renderScrTable();renderSs();}
-function setYr(btn,yr,ctx){var tog=$$(ctx==='scr'?'ScrYrTog':'DashYrTog');tog.querySelectorAll('.yr-b').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');if(ctx==='scr'){S.scrYr=yr;applyF();}else{S.dashYr=yr;renderDash();}}
 
 function renderScrTable(){
   var list=S.filtered;var totSeg=list.reduce(function(a,c){return a+segsOf(c,S.scrYr).length;},0);
@@ -1233,6 +1278,202 @@ function completePay(){
 // ─── MANAGE ───
 function openManage(){var list=$$('ManageCurrentList');list.innerHTML=S.subscribed.map(function(id){var co=DB.find(function(c){return c.id===id;});if(!co)return'';return'<div class="order-row"><div><div class="on">'+co.name+'</div><div class="om">'+co.l0+' · '+co.country+' · $'+pricePerCo(co.country).toFixed(2)+'/mo</div></div><span class="l0-chip" style="font-size:.58rem">'+co.l0+'</span></div>';}).join('');if(!S.subscribed.length)list.innerHTML='<div style="text-align:center;padding:12px;color:var(--g2);font-size:.72rem">No subscribed companies yet</div>';$$('MdlManage').classList.add('on');}
 function switchManage(t){$$('MtabSelf').classList.toggle('on',t==='self');$$('MtabContact').classList.toggle('on',t==='contact');$$('ManageSelf').style.display=t==='self'?'block':'none';$$('ManageContact').style.display=t==='contact'?'block':'none';}
+
+// ─── FAQ ───
+var FAQ_DATA=[
+  {section:'Understanding ITICS Classification'},
+  {q:'What is ITICS?',a:'ITICS (Indxx Thematic Industry Classification System) is a proprietary revenue-based classification framework developed by Indxx. Unlike traditional GICS or SIC codes that classify a company by its primary business, ITICS maps each company\'s revenue across multiple L1 Thematic Categories and L2 Sub-categories, reflecting the true economic mix of the business.'},
+  {q:'What do L0, L1, and L2 mean?',a:'ITICS uses a three-tier hierarchy: <br><br><strong>L0 (Sector)</strong> — The broad sector (e.g., Technology, Financials, Health Care). There are 11 L0 Sectors in ITICS.<br><strong>L1 (Thematic Category)</strong> — A theme within a sector (e.g., Semiconductor, Banking, Pharmaceuticals). There are 55+ L1 themes.<br><strong>L2 (Sub-category)</strong> — A specific product or revenue line within an L1 theme (e.g., AI Accelerators / GPU, Retail & Corporate Banking). There are 700+ L2 sub-categories.'},
+  {q:'What are the 11 L0 Sectors in ITICS?',a:'The 11 L0 Sectors are: Technology, Financials, Health Care, Consumer Discretionary, Industrials, Communication Services, Materials, Utilities, Real Estate, Energy, and Consumer Staples.'},
+  {q:'What does "Revenue %" mean in the data?',a:'Revenue % represents the proportion of a company\'s total reported revenue attributable to each L2 Sub-category in the selected fiscal year. All L2 segments for a company sum to 100%. This allows precise measurement of thematic exposure.'},
+  {q:'What is a "Pure Play", "Quasi", or "Marginal" classification?',a:'These classifications indicate the strength of a company\'s thematic exposure within a given L2 Sub-category:<br><br><strong style="color:var(--grn)">Pure Play (≥50%)</strong> — More than half of revenue comes from this sub-category. The company is a core constituent of this theme.<br><strong style="color:var(--amb)">Quasi (20–49%)</strong> — Meaningful but not dominant exposure. Suitable for broad thematic indices.<br><strong style="color:var(--acc)">Marginal (&lt;20%)</strong> — Minor revenue contribution. Typically excluded from pure-play index strategies.'},
+  {q:'How frequently is the data updated?',a:'ITICS data is updated annually. Each company\'s revenue segments are mapped based on its most recently published annual report. The platform currently covers fiscal years 2023, 2024, and 2025. Intra-year updates may be made for significant corporate restructurings or restatements.'},
+  {q:'How does ITICS differ from GICS or ICB?',a:'GICS and ICB assign a single primary classification to each company. ITICS instead distributes revenue across multiple themes proportionally. This means a conglomerate like Amazon is classified across E-Commerce, Cloud Services, Digital Advertising, and Streaming — capturing its true diversified exposure rather than forcing a single-bucket label.'},
+  {q:'Why might a company have revenue in "Others" (L1 901)?',a:'The "Others" category captures revenue that does not map to a named L1/L2 theme — typically unallocated corporate revenue, holding company income, or minor revenue lines below materiality thresholds. It ensures every company\'s segments sum to exactly 100%.'},
+  {section:'Subscription & Access'},
+  {q:'How does the free trial work?',a:'New users receive a 30-day free trial upon sign-up. During the trial, you have full access to all subscribed securities — including L1, L2, revenue %, and classification data. No credit card is required to start, but payment details are collected at subscription activation. You will not be charged until the trial period ends.'},
+  {q:'How is pricing determined?',a:'ITICS uses a per-security pricing model based on the region of the company:<br><br>• United States / Canada (Americas): $1.00–$1.25 per company/month<br>• Europe / Asia Pacific / Other: $1.50 per company/month<br><br>For portfolios exceeding 100 companies, regional or global bundles may offer savings. Bundles are automatically surfaced during checkout.'},
+  {q:'What are regional bundles?',a:'Regional bundles provide a fixed monthly price for all companies within a geographic scope, up to a defined maximum:<br><br>• <strong>Americas Bundle</strong>: $80/mo, up to 100 companies (US & Canada)<br>• <strong>Europe Bundle</strong>: $120/mo, up to 100 companies<br>• <strong>APAC Bundle</strong>: $120/mo, up to 100 companies<br>• <strong>Global 200</strong>: $280/mo, up to 200 companies worldwide<br>• <strong>Global 500</strong>: $600/mo, up to 500 companies worldwide'},
+  {q:'Can I subscribe to only specific securities?',a:'Yes. ITICS is designed for selective subscription. Use the Security Screener to filter by sector, theme, sub-category, region, and revenue classification. Select only the companies you need, and subscribe at a per-company rate. You can add more companies at any time from the dashboard.'},
+  {q:'What happens when I add or remove companies?',a:'<strong>Adding companies</strong> takes effect immediately — the new security appears in your dashboard with full L1/L2/revenue data at your next session or page refresh.<br><br><strong>Removing companies</strong> takes effect at the end of your current billing cycle. You retain access to removed companies until the billing period ends.'},
+  {q:'Can I export data?',a:'Yes. Subscribed users can export data in CSV or Excel (XLSX) format from the dashboard. You can export data for individual years (2023, 2024, or 2025) or all years combined. Multi-year Excel exports include separate sheets per year plus a Summary sheet.'},
+  {q:'Who do I contact for enterprise or bulk subscriptions?',a:'For portfolios requiring 500+ companies, custom data deliveries (FTP, API), white-label licensing, or index construction partnerships, please contact the Indxx client team directly:<br><br>📞 +1 (844) 55-INDXX<br>✉️ info@indxx.com<br>🌐 indxx.com/contact-us'},
+  {q:'Is my data secure?',a:'Yes. All data in transit is encrypted using 256-bit SSL/TLS. Payment processing is PCI-DSS compliant. Indxx does not store raw card numbers on its servers — payment tokenization is handled by a certified payment processor.'},
+];
+
+function openFaq(){
+  var body=$$('FaqBody');var html='';
+  FAQ_DATA.forEach(function(item,idx){
+    if(item.section){html+='<div class="faq-section-hd">'+item.section+'</div>';}
+    else{html+='<div class="faq-item"><div class="faq-q" id="fq'+idx+'" onclick="toggleFaq('+idx+')">'+item.q+'<span class="faq-q-arrow">▶</span></div><div class="faq-a" id="fa'+idx+'">'+item.a+'</div></div>';}
+  });
+  body.innerHTML=html;
+  $$('MdlFaq').classList.add('on');
+}
+function toggleFaq(idx){
+  var q=$$('fq'+idx),a=$$('fa'+idx);
+  if(!q||!a)return;
+  var isOpen=q.classList.contains('open');
+  q.classList.toggle('open',!isOpen);
+  a.classList.toggle('open',!isOpen);
+}
+$$('MdlFaq').addEventListener('click',function(e){if(e.target===this)this.classList.remove('on');});
+
+// ─── GUIDE DOWNLOADS ───
+function dlGuide(type){
+  var content,fname;
+  if(type==='itics'){
+    fname='ITICS_Understanding_Guide.txt';
+    content=[
+'ITICS — INDXX THEMATIC INDUSTRY CLASSIFICATION SYSTEM',
+'Understanding Guide  |  Version 2025.1  |  Indxx LLC',
+'================================================================',
+'',
+'1. INTRODUCTION',
+'   ITICS is a revenue-based multi-segment classification framework',
+'   covering 17,000+ listed companies across 60+ countries. Unlike',
+'   single-bucket systems (GICS, ICB, TRBC), ITICS distributes each',
+'   company\'s annual revenue proportionally across up to 20+ L2',
+'   sub-categories, providing granular thematic exposure data.',
+'',
+'2. HIERARCHY',
+'   L0  Sector            (11 sectors)',
+'   └── L1  Thematic Category  (55+ themes)',
+'       └── L2  Sub-category     (700+ sub-categories)',
+'',
+'3. THE 11 L0 SECTORS',
+'   100  Financials',
+'   200  Energy',
+'   300  Health Care',
+'   400  Consumer Discretionary',
+'   410  Consumer Staples',
+'   500  Real Estate',
+'   600  Industrials',
+'   700  Technology',
+'   800  Materials',
+'   900  Communication Services',
+'   (910 Utilities)',
+'',
+'4. REVENUE % MAPPING',
+'   Each L2 segment carries a Revenue % — the share of total company',
+'   revenue from that sub-category. All L2 segments for one company',
+'   in one fiscal year sum to exactly 100%.',
+'',
+'   Example — NVIDIA (FY2025):',
+'     L0:  Technology',
+'     L1:  Semiconductor (60101) ........... 87.3%  → Pure Play',
+'     L1:  Software      (70102) .............8.2%  → Quasi',
+'     L1:  Others        (90101) .............4.5%  → Marginal',
+'',
+'5. REVENUE CLASSIFICATION',
+'   Pure Play   ≥ 50%  — Core thematic company',
+'   Quasi       20–49% — Meaningful exposure',
+'   Marginal    < 20%  — Minor exposure',
+'',
+'   Classification is applied at the L2 sub-category level.',
+'   A single company may be Pure Play in one L2 and Marginal',
+'   in another simultaneously.',
+'',
+'6. USE CASES',
+'   A. ETF / Index construction: filter L2 = "AI Accelerators / GPU"',
+'      + Classification = "Pure Play" to build a concentrated AI index.',
+'   B. Portfolio attribution: compare portfolio companies\' thematic',
+'      weights across L1 themes over 2023-2025.',
+'   C. Peer group analysis: identify all companies with >30% revenue',
+'      in "EV Battery" (L2 60405) regardless of primary GICS sector.',
+'',
+'7. DATA COVERAGE',
+'   Fiscal years available: 2023, 2024, 2025',
+'   Update frequency: Annual (post earnings season)',
+'   Geographic coverage: Americas, Europe, Asia Pacific, Other',
+'',
+'8. CONTACT',
+'   Indxx LLC  |  info@indxx.com  |  +1 (844) 55-INDXX',
+'   www.indxx.com',
+    ].join('\r\n');
+  } else {
+    fname='ITICS_Subscription_Guide.txt';
+    content=[
+'ITICS — SUBSCRIPTION GUIDE',
+'Version 2025.1  |  Indxx LLC',
+'================================================================',
+'',
+'1. GETTING STARTED',
+'   Step 1: Create a free account at platform.indxx.com',
+'   Step 2: Preview sample data (L0 visible, L1/L2 locked)',
+'   Step 3: Open Security Screener — filter to your universe',
+'   Step 4: Select companies → Review pricing → Activate trial',
+'   Step 5: Access full L0/L1/L2/Revenue data in your dashboard',
+'',
+'2. FREE TRIAL',
+'   Duration:  30 days',
+'   Cost:      $0 — no charge during trial',
+'   Access:    Full data for all subscribed securities',
+'   Cancel:    Anytime before trial ends — no obligation',
+'',
+'3. PRICING MODEL',
+'',
+'   A. Per-Company Rate',
+'      Region           Rate/company/month',
+'      ─────────────────────────────────────',
+'      United States    $1.00',
+'      Canada           $1.25',
+'      India            $1.25',
+'      UK, EU, Japan,',
+'      Australia, etc.  $1.50',
+'',
+'   B. Regional Bundles (for 100+ company portfolios)',
+'      Bundle           Coverage         Max Cos   Price/mo',
+'      ──────────────────────────────────────────────────────',
+'      Americas         US & Canada      100        $80',
+'      Europe           EU markets       100       $120',
+'      Asia Pacific     APAC             100       $120',
+'      Global 200       Worldwide        200       $280',
+'      Global 500       Worldwide        500       $600',
+'',
+'      Bundles are automatically suggested during checkout',
+'      when they offer savings over per-company pricing.',
+'',
+'4. SELECTING SECURITIES',
+'   - Use the Security Screener (Filters panel on left)',
+'   - Filter by L0 Sector → L1 Theme → L2 Sub-category',
+'   - Apply Region, Revenue %, Classification, or MCap filters',
+'   - Tick individual rows or use Select All',
+'   - Pricing updates live in the subscription footer bar',
+'',
+'5. MANAGING YOUR SUBSCRIPTION',
+'   Adding securities:  Immediate effect — use "+" in dashboard',
+'   Removing securities: Effective next billing cycle',
+'   Billing changes:    Contact Indxx for enterprise modifications',
+'',
+'6. DATA EXPORT',
+'   Format:  CSV or Excel (XLSX)',
+'   Scope:   Per-year (2023/2024/2025) or All Years',
+'   Content: Company ID, ISIN, Name, Country, Region, MCap,',
+'            L0, L1 Code, L1 Name, L2 Code, L2 Name,',
+'            Revenue %, Classification, Year',
+'',
+'   Multi-year Excel: separate worksheet per year + Summary tab',
+'',
+'7. PAYMENT & SECURITY',
+'   Accepted:  Major credit cards (Visa, Mastercard, Amex)',
+'   Billing:   Monthly, post-trial',
+'   Security:  256-bit SSL · PCI-DSS compliant · Tokenized storage',
+'',
+'8. SUPPORT',
+'   Self-service: Manage subscription from dashboard (⚙ Manage)',
+'   Phone:        +1 (844) 55-INDXX  (Mon–Fri 9AM–6PM EST)',
+'   Email:        info@indxx.com',
+'   Web:          indxx.com/contact-us',
+'',
+'9. ENTERPRISE & API',
+'   For 500+ companies, FTP delivery, API integration, or custom',
+'   index licensing, contact enterprise@indxx.com.',
+    ].join('\r\n');
+  }
+  triggerDownload(content,fname,'text/plain;charset=utf-8;');
+  toast('📄 Guide downloaded: '+fname);
+}
 
 // ─── USE CASE TICKER ───
 var ucIdx=0;setInterval(function(){document.querySelectorAll('.uc-card').forEach(function(c){c.classList.remove('active');});ucIdx=(ucIdx+1)%3;var el=$$('UcCard'+ucIdx);if(el)el.classList.add('active');},3500);
